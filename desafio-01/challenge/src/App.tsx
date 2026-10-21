@@ -1,6 +1,7 @@
 import Header from "./components/header";
 import Hero from "./components/hero";
 import LogoBar from "./components/logo_bar";
+import Solutions from "./components/solutions";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <Hero />
       <LogoBar />
+      <Solutions />
     </div>
   );
 }
