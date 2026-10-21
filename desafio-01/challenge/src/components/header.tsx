@@ -56,7 +56,6 @@ export default function Header() {
           <span className="-ml-1 text-blue-400">AI</span>
         </a>
 
-        {/* Links desktop */}
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <a
@@ -69,12 +68,11 @@ export default function Header() {
           ))}
         </div>
 
-        {/* CTA desktop */}
         <a
           href="#contato"
-          className="hidden rounded-full bg-blue-500 px-5 py-2.5 text-[18px] font-semibold text-white transition hover:bg-blue-400 md:inline-flex"
+          className="hidden rounded-full bg-blue-500 px-5 py-2.5 text-[18px] font-semibold text-white transition-colors hover:bg-blue-400 md:inline-flex"
         >
-          Começar agora
+          Entre em contato
         </a>
 
         {/* Botão mobile */}
@@ -82,7 +80,7 @@ export default function Header() {
           type="button"
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((open) => !open)}
           className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg border border-white/15 text-white md:hidden"
         >
           <span className="h-0.5 w-5 rounded-full bg-current" />
@@ -93,7 +91,7 @@ export default function Header() {
 
       {/* Menu mobile */}
       {menuOpen && (
-        <div className="border-t border-white/10 bg-[#000000]/95 px-6 py-5 backdrop-blur-xl md:hidden">
+        <div className="border-t border-white/10 bg-blue/10 backdrop-blur-xl px-6 py-5 backdrop-blur-xl md:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-5">
             {links.map((link) => (
               <a
