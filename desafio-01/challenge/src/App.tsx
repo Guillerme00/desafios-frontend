@@ -1,6 +1,7 @@
 import Header from "./components/header";
 import Hero from "./components/hero";
 import LogoBar from "./components/logo_bar";
+import Pricing from "./components/pricing";
 import Solutions from "./components/solutions";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <LogoBar />
       <Solutions />
+      <Pricing />
     </div>
   );
 }

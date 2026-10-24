@@ -24,11 +24,22 @@ export default function Header() {
     };
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+
+    section?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    setMenuOpen(false);
+  };
+
   const links = [
-    { label: "Soluções", href: "#solucoes" },
-    { label: "Clientes", href: "#clientes" },
-    { label: "Preços", href: "#precos" },
-    { label: "Contato", href: "#contato" },
+    { label: "Clientes", href: "clientes" },
+    { label: "Soluções", href: "solucoes" },
+    { label: "Preços", href: "precos" },
+    { label: "Contato", href: "contato" },
   ];
 
   return (
@@ -40,9 +51,17 @@ export default function Header() {
       }`}
     >
       <nav className="mx-auto flex max-w-[85%] items-center justify-between px-6 py-5">
-        <a
-          href="#inicio"
-          className="flex items-center gap-2 text-xl font-bold tracking-tight text-white"
+        <button
+          type="button"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+
+            setMenuOpen(false);
+          }}
+          className="flex cursor-pointer items-center gap-2 text-xl font-bold tracking-tight text-white"
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500">
             <span className="flex items-center gap-0.5">
@@ -54,17 +73,17 @@ export default function Header() {
           </span>
           CheckSpeech
           <span className="-ml-1 text-blue-400">AI</span>
-        </a>
+        </button>
 
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
-            <a
+            <button
               key={link.href}
-              href={link.href}
-              className="text-[18px] text-white/70 transition-colors hover:text-white"
+              onClick={() => scrollToSection(link.href)}
+              className="cursor-pointer text-[18px] text-white/70 transition-colors hover:text-white"
             >
               {link.label}
-            </a>
+            </button>
           ))}
         </div>
 
