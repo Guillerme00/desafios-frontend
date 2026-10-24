@@ -4,10 +4,13 @@ type ClientLogo = {
 };
 
 const logos: ClientLogo[] = [
-  { name: "google", src: "/logos/google.svg" },
-  { name: "apple", src: "/logos/apple.svg" },
-  { name: "youtube", src: "/logos/youtube.svg" },
-  { name: "sportify", src: "/logos/sportify.svg" },
+  { name: "logo 1", src: "/logos/logo1.png" },
+  { name: "logo 2", src: "/logos/logo2.png" },
+  { name: "logo 3", src: "/logos/logo3.png" },
+  { name: "logo 4", src: "/logos/logo4.png" },
+  { name: "logo 5", src: "/logos/logo5.png" },
+  { name: "logo 6", src: "/logos/logo6.png" },
+  { name: "logo 7", src: "/logos/logo7.png" },
 ];
 
 export default function LogoBar() {
